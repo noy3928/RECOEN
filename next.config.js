@@ -13,9 +13,9 @@ const nextConfig = {
     domains: ['recoen.s3.ap-northeast-2.amazonaws.com'],
     formats: ['image/avif', 'image/webp'],
   },
-  // sentry: {
-  //   hideSourceMaps: true,
-  // },
+  sentry: {
+    hideSourceMaps: true,
+  },
   // webpack: (config, options) => {
   //   config.plugins.push(
   //     new options.webpack.DefinePlugin({
@@ -31,4 +31,4 @@ const sentryWebpackPluginOptions = {
   silent: true,
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
