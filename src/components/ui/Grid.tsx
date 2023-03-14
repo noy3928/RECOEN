@@ -38,7 +38,6 @@ const VTwoGrid = ({ children }: GridVersionProps) => {
   );
 };
 
-// version one grid style
 const VOneContainer = styled.div`
   width: 100%;
   display: flex;
@@ -64,7 +63,6 @@ const VOneWrapper = styled.div`
   }
 `;
 
-// version two grid style
 const VTwoContainer = styled.div`
   width: 100%;
   display: flex;
