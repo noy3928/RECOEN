@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ViewArticleElement } from 'src/types/article';
 import { convertDateFormat } from 'src/utils';
 import { theme } from 'src/style/theme';
 
 interface Props {
   article: ViewArticleElement;
-  index: number;
 }
 
-const Article = ({ article, index }: Props) => {
+const Article = ({ article }: Props) => {
   console.log(article.createdAt);
   return (
     <Wrapper>
@@ -34,14 +32,15 @@ const Article = ({ article, index }: Props) => {
 export default Article;
 
 const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const Title = styled.h2`
   margin-top: 0;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -56,7 +55,7 @@ const Title = styled.h2`
 
 const Desc = styled.p`
   font-weight: 200;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: ${theme.color.gray100};
   overflow: hidden;
   text-overflow: ellipsis;
@@ -72,6 +71,8 @@ const Desc = styled.p`
 `;
 
 const Date = styled.time`
-  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 100px;
+  font-size: 0.9rem;
   color: ${theme.color.primary};
 `;
