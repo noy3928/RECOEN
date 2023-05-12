@@ -53,11 +53,11 @@ const AboutPage = () => {
 export default AboutPage;
 
 const Container = styled.div`
-  width: 1200px;
+  width: 1000px;
   padding: 0 30px;
   margin: 0px auto;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     width: calc(100% - 60px);
   }
 
@@ -75,7 +75,7 @@ const Title = styled.h1`
 const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
   }

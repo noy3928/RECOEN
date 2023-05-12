@@ -57,7 +57,7 @@ const FixedContainer = styled.div<StyleProps>`
 `;
 
 const Container = styled.header`
-  max-width: 1260px;
+  max-width: 1060px;
   width: 100%;
   height: 70px;
   position: relative;
@@ -68,7 +68,7 @@ const Container = styled.header`
   margin: 0 auto;
   padding: 0 30px 0 30px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     width: 100%;
   }
 `;

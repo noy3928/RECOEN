@@ -58,7 +58,7 @@ interface StyleProps {
   isModal: boolean;
 }
 
-const writePageStyle = 'padding-top: 30px; width : 1200px';
+const writePageStyle = 'padding-top: 30px; width : 1000px';
 
 const Container = styled.div<StyleProps>`
   padding-top: 70px;

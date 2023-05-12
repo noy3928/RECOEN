@@ -53,7 +53,7 @@ const StyledLink = styled(Link)`
     color: ${theme.color.white};
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
   }
 `;
@@ -64,7 +64,7 @@ const ImageWrapper = styled.div`
   position: relative;
   object-fit: cover;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 `;

@@ -17,13 +17,13 @@ UpperLayout.Hero = Hero;
 UpperLayout.TagSearch = TagSearch;
 
 const Layout = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin: 0px auto;
   margin-top: 120px;
   margin-bottom: 50px;
   padding: 0 30px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     width: calc(100% - 60px);
   }
 
