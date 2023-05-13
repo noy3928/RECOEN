@@ -3,12 +3,12 @@ import { ArticleModel as ArticleModelT } from 'src/types/article';
 
 const articleSchema = new Schema<ArticleModelT>(
   {
-    title: String,
-    description: String,
-    tags: [String],
-    content: String,
-    imgUrl: String,
-    category: String,
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    tags: { type: [String], required: true },
+    content: { type: String, required: true },
+    imgUrl: { type: String, required: false },
+    category: { type: String, required: true },
   },
   { timestamps: true },
 );
