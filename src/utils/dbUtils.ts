@@ -41,6 +41,7 @@ export default class DBUtils {
 
     const articlesWithBlurURL = await Promise.all(
       articles.map(async (article: ViewArticleElement) => {
+        if (article.imgUrl === undefined) return article;
         const { base64 } = await getPlaiceholder(article.imgUrl);
         return { ...article, blurDataURL: base64 };
       }),
@@ -61,8 +62,11 @@ export default class DBUtils {
 
   async getMDXContent(id: string) {
     const article = await this.findById(id);
-    const { base64 } = await getPlaiceholder(article.imgUrl);
     const MDXcontent = await serialize(article.content);
+
+    if (article.imgUrl === undefined) return { ...article, MDXcontent };
+
+    const { base64 } = await getPlaiceholder(article.imgUrl);
 
     return { ...article, blurDataURL: base64, MDXcontent };
   }

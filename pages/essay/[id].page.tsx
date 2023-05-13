@@ -31,7 +31,7 @@ const EssayDetailPage = ({
       </DetailPageContainer.TitleWrapper>
       <DetailPageContainer.Hr />
       <DetailPageContainer.ContentWrapper>
-        <DetailPageContainer.Thunbnail article={article} />
+        {article.imgUrl && <DetailPageContainer.Thunbnail article={article} />}
         <DetailPageContainer.Content
           {...article.MDXcontent}
           components={MDXTag}
