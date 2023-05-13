@@ -3,8 +3,8 @@ import { convertDateFormat } from '../convertDateFormat';
 const createAt = '2022-12-26';
 
 describe('convertDateFormat', () => {
-  it('-로 들어온 날짜 데이터를 .로 바꿔준다.', () => {
-    expect(convertDateFormat(createAt)).toBe('2022.12.26');
+  it('YYYY-MM-DD 형식의 날짜를 DD MMM YYYY 형식으로 변환한다.', () => {
+    expect(convertDateFormat(createAt)).toBe('26 DEC 2022');
   });
 
   context('date가 없을 때', () => {
