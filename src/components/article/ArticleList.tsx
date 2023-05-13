@@ -69,4 +69,5 @@ const Text = styled.p`
 const RightSideBox = styled.div`
   border-left: 1px solid ${theme.color.primary};
   padding-left: 40px;
+  flex-grow: 1;
 `;

@@ -4,27 +4,44 @@ import Link from 'next/link';
 import { ViewArticleElement } from 'src/types/article';
 import { convertDateFormat } from 'src/utils';
 import { theme } from 'src/style/theme';
+import Image from 'next/image';
 
 interface Props {
   article: ViewArticleElement;
 }
 
 const Article = ({ article }: Props) => {
-  console.log(article.createdAt);
   return (
     <Wrapper>
       <Date>{convertDateFormat(article.createdAt)}</Date>
-      <div>
+      <ContentWrapper>
         <Link
           data-testid="article"
           href={`/${article.category}/${article._id}`}
         >
           <Title aria-label={`제목 : ${article.title}`}>{article.title}</Title>
         </Link>
+        <TagWrapper>
+          {article.tags.map((tag, index) => {
+            return <Tags key={index}>{tag}</Tags>;
+          })}
+        </TagWrapper>
         <Desc aria-label={`설명문 : ${article.description}`}>
           {article.description}
         </Desc>
-      </div>
+      </ContentWrapper>
+      {article.imgUrl && (
+        <ImageWrapper href={`/${article.category}/${article._id}`}>
+          <Image
+            src={article.imgUrl}
+            alt="Thumbnail of article"
+            placeholder="blur"
+            blurDataURL={article.blurDataURL}
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+        </ImageWrapper>
+      )}
     </Wrapper>
   );
 };
@@ -34,19 +51,29 @@ export default Article;
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px;
 `;
 
 const Title = styled.h2`
-  margin-top: 0;
+  margin: 0;
+  margin-bottom: 5px;
   font-size: 1.4rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #f3f3f3;
   width: 100%;
-  font-weight: 400;
+  font-weight: 500;
 
   @media screen and (max-width: 768px) {
     width: 315px;
@@ -55,7 +82,7 @@ const Title = styled.h2`
 
 const Desc = styled.p`
   font-weight: 200;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: ${theme.color.gray100};
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,4 +102,24 @@ const Date = styled.time`
   width: 100px;
   font-size: 0.9rem;
   color: ${theme.color.primary};
+`;
+
+const TagWrapper = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const Tags = styled.p`
+  margin: 0;
+  color: ${theme.color.primary};
+  font-weight: 300;
+  font-size: 0.9rem;
+`;
+
+const ImageWrapper = styled(Link)`
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  object-fit: cover;
 `;
