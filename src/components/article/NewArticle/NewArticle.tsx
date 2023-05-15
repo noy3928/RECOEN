@@ -12,49 +12,61 @@ interface Props {
 
 const Article = ({ article }: Props) => {
   return (
-    <Wrapper>
+    <Container>
       <Date>{convertDateFormat(article.createdAt)}</Date>
-      <ContentWrapper>
-        <Link
-          data-testid="article"
-          href={`/${article.category}/${article._id}`}
-        >
-          <Title aria-label={`제목 : ${article.title}`}>{article.title}</Title>
-        </Link>
-        <TagWrapper>
-          {article.tags.map((tag, index) => {
-            return <Tags key={index}>{tag}</Tags>;
-          })}
-        </TagWrapper>
-        <Desc aria-label={`설명문 : ${article.description}`}>
-          {article.description}
-        </Desc>
-      </ContentWrapper>
-      {article.imgUrl && (
-        <ImageWrapper href={`/${article.category}/${article._id}`}>
-          <Image
-            src={article.imgUrl}
-            alt="Thumbnail of article"
-            placeholder="blur"
-            blurDataURL={article.blurDataURL}
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </ImageWrapper>
-      )}
-    </Wrapper>
+      <Wrapper>
+        <ContentWrapper>
+          <Link
+            data-testid="article"
+            href={`/${article.category}/${article._id}`}
+          >
+            <Title aria-label={`제목 : ${article.title}`}>
+              {article.title}
+            </Title>
+          </Link>
+          <TagWrapper>
+            {article.tags.map((tag, index) => {
+              return <Tags key={index}>{tag}</Tags>;
+            })}
+          </TagWrapper>
+          <Desc aria-label={`설명문 : ${article.description}`}>
+            {article.description}
+          </Desc>
+        </ContentWrapper>
+        {article.imgUrl && (
+          <ImageWrapper href={`/${article.category}/${article._id}`}>
+            <Image
+              src={article.imgUrl}
+              alt="Thumbnail of article"
+              placeholder="blur"
+              blurDataURL={article.blurDataURL}
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+          </ImageWrapper>
+        )}
+      </Wrapper>
+    </Container>
   );
 };
 
 export default Article;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   gap: 20px;
   margin-bottom: 50px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 `;
 
 const ContentWrapper = styled.div`
@@ -68,33 +80,20 @@ const Title = styled.h2`
   margin: 0;
   margin-bottom: 5px;
   font-size: 1.4rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: #f3f3f3;
   width: 100%;
   font-weight: 500;
-
-  @media screen and (max-width: 768px) {
-    width: 315px;
-  }
 `;
 
 const Desc = styled.p`
   font-weight: 200;
   font-size: 1rem;
   color: ${theme.color.gray100};
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   line-height: 1.4;
   letter-spacing: 0.3px;
-
-  @media screen and (max-width: 768px) {
-    width: 315px;
-  }
 `;
 
 const Date = styled.time`

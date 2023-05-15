@@ -38,6 +38,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  padding: 0 30px;
 `;
 
 const Wrapper = styled.div`
@@ -45,11 +46,8 @@ const Wrapper = styled.div`
   display: flex;
 
   @media screen and (max-width: 1000px) {
-    width: 800px;
-  }
-
-  @media screen and (max-width: 767px) {
     width: 100%;
+    flex-direction: column;
   }
 `;
 
@@ -70,4 +68,11 @@ const RightSideBox = styled.div`
   border-left: 1px solid ${theme.color.primary};
   padding-left: 40px;
   flex-grow: 1;
+
+  @media screen and (max-width: 1000px) {
+    border: none;
+    border-top: 1px solid ${theme.color.primary};
+    padding-top: 60px;
+    padding-left: 0;
+  }
 `;
