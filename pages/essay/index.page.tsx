@@ -6,6 +6,7 @@ import DBUtils from 'src/utils/dbUtils';
 import { getTags } from 'src/utils/getTags';
 
 import Essay from 'src/components/essay/Essay';
+import NewArticle from 'src/components/article/NewArticle/NewArticle';
 import ListPageContainer from 'src/components/container/ListPageContainer';
 
 import { useSettingListPage } from 'src/hooks';
@@ -28,8 +29,8 @@ const EssayPage = ({
       <ListPageContainer.Hr />
       <ListPageContainer.ArticleList
         articles={articles}
-        renderListItem={(article, index) => (
-          <Essay article={article} index={index} key={article._id} />
+        renderListItem={(article) => (
+          <NewArticle article={article} key={article._id} />
         )}
       />
     </ListPageContainer>

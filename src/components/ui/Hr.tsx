@@ -6,5 +6,7 @@ const Hr = () => {
 export default Hr;
 
 const StyledHr = styled.hr`
-  border: 0.5px solid #494c56;
+  border: none;
+  border-top: 0.5px solid rgba(74, 76, 85, 0.3);
+  margin-bottom: 80px;
 `;

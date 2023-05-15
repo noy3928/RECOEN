@@ -13,6 +13,10 @@ const handler = nc<NextApiRequest, NextApiResponse>({
   },
 });
 
+function isValidationError(err: any): err is Error {
+  return err.name === 'ValidationError';
+}
+
 handler
   .use(async (req, _, next) => {
     await connectMongo();
@@ -27,6 +31,13 @@ handler
       res.status(200).json({ article });
     } catch (err) {
       console.log(err);
+      if (isValidationError(err)) {
+        res.status(400).json({ result: false, message: err.message });
+      } else {
+        res
+          .status(500)
+          .json({ result: false, message: 'Internal server error' });
+      }
     }
   })
   .put(async (req, res) => {

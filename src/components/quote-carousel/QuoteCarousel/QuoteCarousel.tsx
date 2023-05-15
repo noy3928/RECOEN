@@ -48,12 +48,12 @@ const QuoteCarousel = ({ quotes }: Props) => {
 export default QuoteCarousel;
 
 const Container = styled.div`
-  width: 1200px;
+  width: 1000px;
   height: 100%;
   box-sizing: border-box;
   margin: 0 auto;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     width: 860px;
     padding: 0 30px;
   }

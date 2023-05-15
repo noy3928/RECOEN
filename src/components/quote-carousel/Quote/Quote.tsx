@@ -78,7 +78,7 @@ const EnglishQuote = styled.blockquote`
   white-space: pre-line;
   font-family: 'PT Serif', serif;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1000px) {
     font-size: 2.5rem;
   }
 

@@ -49,7 +49,7 @@ const Paragraph = styled.p`
   color: ${theme.color.gray300};
   font-weight: 300;
   letter-spacing: 0.9px;
-  line-height: 25px;
+  line-height: 28px;
 `;
 
 const Image = styled.img`
@@ -94,6 +94,7 @@ const List = styled.li`
   color: ${theme.color.gray300};
   font-weight: 300;
   margin: 10px 0;
+  line-height: 30px;
 `;
 
 const Ul = styled.ul`
