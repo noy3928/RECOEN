@@ -9,6 +9,6 @@ const commentSchema = new Schema(
   { timestamps: true },
 );
 
-const CommentModel = models.Comment || model('comment', commentSchema);
+const CommentModel = models.Comment || model('Comment', commentSchema);
 
 export default CommentModel;
