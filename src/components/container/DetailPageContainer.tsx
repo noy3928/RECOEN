@@ -4,7 +4,7 @@ import ArticleDetailTitle from 'src/components/article/article-detail/ArticleDet
 import { MDXRemote } from 'next-mdx-remote';
 import ArticleDetailImg from 'src/components/article/article-detail/ArticleDetailImg';
 import CommentForm from 'src/components/comment/CommentForm';
-
+import Comment from 'src/components/comment/Comment';
 interface Props {
   children: React.ReactElement[];
 }
@@ -39,6 +39,8 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const CommentList = styled.div``;
+
 const DetailPageContainer = ({ children }: Props) => {
   return <Container>{children}</Container>;
 };
@@ -53,3 +55,5 @@ DetailPageContainer.Content = MDXRemote;
 DetailPageContainer.Hr = Hr;
 DetailPageContainer.Thunbnail = ArticleDetailImg;
 DetailPageContainer.CommentForm = CommentForm;
+DetailPageContainer.CommentList = CommentList;
+DetailPageContainer.Comment = Comment;

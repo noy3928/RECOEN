@@ -40,6 +40,14 @@ const BookDetailPage = ({
           profileImg={article.imgUrl}
           commentLength={4}
         />
+        <DetailPageContainer.CommentList>
+          <DetailPageContainer.Comment
+            createdAt={article.createdAt}
+            content="새로운 댓글입니다"
+            profileImg={article.imgUrl}
+            userName="김춘식"
+          />
+        </DetailPageContainer.CommentList>
       </DetailPageContainer.ContentWrapper>
     </DetailPageContainer>
   );

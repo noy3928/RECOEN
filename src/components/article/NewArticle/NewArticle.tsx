@@ -11,7 +11,6 @@ interface Props {
 }
 
 const Article = ({ article }: Props) => {
-  console.log(article.imgUrl);
   return (
     <Container>
       <Date>{convertDateFormat(article.createdAt)}</Date>

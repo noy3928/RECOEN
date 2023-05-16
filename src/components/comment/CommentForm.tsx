@@ -46,6 +46,7 @@ const Container = styled.form`
   gap: 20px;
   border-top: 1px solid ${theme.color.gray400};
   padding-top: 20px;
+  margin-bottom: 50px;
 `;
 
 const CommentText = styled.div`
