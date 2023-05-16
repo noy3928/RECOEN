@@ -36,6 +36,10 @@ const BookDetailPage = ({
           {...article.MDXcontent}
           components={MDXTag}
         />
+        <DetailPageContainer.CommentForm
+          profileImg={article.imgUrl}
+          commentLength={4}
+        />
       </DetailPageContainer.ContentWrapper>
     </DetailPageContainer>
   );
