@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import Button from 'src/components/ui/Button/Button';
 import { theme } from 'src/style/theme';
+import User from '../../../public/user.png';
 
 interface Props {
   profileImg: string;
@@ -25,7 +26,7 @@ const CommentForm = ({ profileImg, commentLength }: Props) => {
       <Wrapper>
         <ImageWrapper>
           <Image
-            src={profileImg}
+            src={User}
             alt="Profile Image"
             fill
             style={{ objectFit: 'cover' }}

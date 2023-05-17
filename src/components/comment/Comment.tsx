@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { convertTimeFormat } from 'src/utils';
 import { AiOutlineLike } from 'react-icons/ai';
 import { theme } from 'src/style/theme';
+import User from '../../../public/user.png';
 
 interface Props {
   profileImg: string;
@@ -17,7 +18,7 @@ const Comment = ({ profileImg, content, userName, createdAt }: Props) => {
     <Container>
       <ImageWrapper>
         <Image
-          src={profileImg}
+          src={User}
           alt="profile image"
           fill
           style={{ objectFit: 'cover' }}
