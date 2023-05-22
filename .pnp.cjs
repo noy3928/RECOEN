@@ -84,6 +84,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-sitemap", "virtual:091eb689b5e337eef090d9df6ccd88646a06674b17d76b1d2ef2ef7ca355046d2163e999cbed9f2521c92cbd369ab95e4450f88a0292c275d772cb6ae357bb59#npm:3.1.29"],\
             ["plaiceholder", "virtual:091eb689b5e337eef090d9df6ccd88646a06674b17d76b1d2ef2ef7ca355046d2163e999cbed9f2521c92cbd369ab95e4450f88a0292c275d772cb6ae357bb59#npm:2.5.0"],\
             ["prettier", "npm:2.7.1"],\
+            ["prop-types", "npm:15.8.1"],\
             ["prosemirror-transform", "npm:1.7.0"],\
             ["querystring", "npm:0.2.1"],\
             ["ramda", "npm:0.28.0"],\
@@ -5469,6 +5470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next-sitemap", "virtual:091eb689b5e337eef090d9df6ccd88646a06674b17d76b1d2ef2ef7ca355046d2163e999cbed9f2521c92cbd369ab95e4450f88a0292c275d772cb6ae357bb59#npm:3.1.29"],\
             ["plaiceholder", "virtual:091eb689b5e337eef090d9df6ccd88646a06674b17d76b1d2ef2ef7ca355046d2163e999cbed9f2521c92cbd369ab95e4450f88a0292c275d772cb6ae357bb59#npm:2.5.0"],\
             ["prettier", "npm:2.7.1"],\
+            ["prop-types", "npm:15.8.1"],\
             ["prosemirror-transform", "npm:1.7.0"],\
             ["querystring", "npm:0.2.1"],\
             ["ramda", "npm:0.28.0"],\

@@ -37,6 +37,7 @@
     "next-s3-upload": "^0.2.3",
     "next-sitemap": "^3.1.29",
     "plaiceholder": "^2.5.0",
+    "prop-types": "^15.8.1",
     "prosemirror-transform": "^1.7.0",
     "querystring": "^0.2.1",
     "ramda": "^0.28.0",
