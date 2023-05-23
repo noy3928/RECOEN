@@ -36,6 +36,7 @@ const ProgrammingDetailPage = ({
           {...article.MDXcontent}
           components={MDXTag}
         />
+        <DetailPageContainer.DisqusComment article={article} />
       </DetailPageContainer.ContentWrapper>
     </DetailPageContainer>
   );
