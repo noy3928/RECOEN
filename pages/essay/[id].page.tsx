@@ -36,6 +36,7 @@ const EssayDetailPage = ({
           {...article.MDXcontent}
           components={MDXTag}
         />
+        <DetailPageContainer.DisqusComment article={article} />
       </DetailPageContainer.ContentWrapper>
     </DetailPageContainer>
   );
