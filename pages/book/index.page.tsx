@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
         articles: articlesWithBlurURL,
         tags,
       },
-      revalidate: 10, // In seconds
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error);
