@@ -74,6 +74,7 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         article,
       },
+      revalidate: 10, // In seconds
     };
   } catch (err) {
     console.log(err);
