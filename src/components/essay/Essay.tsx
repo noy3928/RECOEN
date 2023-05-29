@@ -23,17 +23,19 @@ const Essay = ({ article, index }: Props) => {
             {article.description}
           </Desc>
         </Box>
-        <ImageWrapper>
-          <Image
-            src={article.imgUrl}
-            alt="Thumbnail of essay-article"
-            placeholder="blur"
-            blurDataURL={article.blurDataURL}
-            fill
-            style={{ objectFit: 'cover', borderRadius: '8px' }}
-            loading={index < 3 ? 'eager' : 'lazy'}
-          />
-        </ImageWrapper>
+        {article.imgUrl && (
+          <ImageWrapper>
+            <Image
+              src={article.imgUrl}
+              alt="Thumbnail of essay-article"
+              placeholder="blur"
+              blurDataURL={article.blurDataURL}
+              fill
+              style={{ objectFit: 'cover', borderRadius: '8px' }}
+              loading={index < 3 ? 'eager' : 'lazy'}
+            />
+          </ImageWrapper>
+        )}
       </Wrapper>
     </StyledLink>
   );

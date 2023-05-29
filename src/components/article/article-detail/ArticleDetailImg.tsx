@@ -7,6 +7,7 @@ interface Props {
 }
 
 const ArticleDetailImg = ({ article }: Props) => {
+  if (!article.imgUrl) return null;
   return (
     <ImageWrapper>
       <Image
