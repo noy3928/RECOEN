@@ -9,7 +9,6 @@ export const articleState = atom<ArticleElement>({
     content: '',
     tags: [],
     description: '',
-    imgUrl: '',
     createdAt: '',
     category: 'programming',
   },
