@@ -63,7 +63,12 @@ handler
         updateContent,
       );
       console.log('UPDATED ARTICLE');
-      res.status(200).json({ article });
+
+      await res.revalidate(`/${req.body.category}`);
+      await res.revalidate(`/${req.body.category}/${article._id}`);
+      console.log('REVALIDATED ARTICLE');
+
+      res.status(200).json({ article, revalidated: true });
     } catch (err) {
       console.log(err);
     }
@@ -77,7 +82,11 @@ handler
       if (!article) return res.status(404);
       console.log('DELETED ARTICLE');
 
-      res.status(200).json({ article });
+      await res.revalidate(`/${req.body.category}`);
+      await res.revalidate(`/${req.body.category}/${article._id}`);
+      console.log('REVALIDATED ARTICLE');
+
+      res.status(200).json({ article, revalidated: true });
     } catch (err) {
       console.log(err);
     }
