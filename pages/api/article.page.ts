@@ -83,7 +83,6 @@ handler
       console.log('DELETED ARTICLE');
 
       await res.revalidate(`/${req.body.category}`);
-      await res.revalidate(`/${req.body.category}/${article._id}`);
       console.log('REVALIDATED ARTICLE');
 
       res.status(200).json({ article, revalidated: true });
