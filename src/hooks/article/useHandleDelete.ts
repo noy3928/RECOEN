@@ -12,7 +12,7 @@ export const useHandleDelete = (category: ArticleCategory) => {
   const handleDelete = async () => {
     if (!detailArticle._id) return;
 
-    await deleteArticle(detailArticle._id);
+    await deleteArticle(detailArticle._id, category);
     return router.push(`/${category}`);
   };
 

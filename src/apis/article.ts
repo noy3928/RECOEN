@@ -1,5 +1,5 @@
 import { axiosInstance } from './index';
-import { ArticleElement } from 'src/types/article';
+import { ArticleElement, ArticleCategory } from 'src/types/article';
 export const PROGRAMMING_ARTICLE_URI = '/api/programming';
 export const BOOK_ARTICLE_URI = '/api/book';
 export const ESSAY_ARTICLE_URI = '/api/essay';
@@ -19,7 +19,7 @@ export const updateArticle = async (data: ArticleElement) => {
   return await axiosInstance.put(ARTICLE_URI, data);
 };
 
-export const deleteArticle = async (id: string) => {
-  const config = { data: { id } };
+export const deleteArticle = async (id: string, category: ArticleCategory) => {
+  const config = { data: { id, category } };
   return await axiosInstance.delete(ARTICLE_URI, config);
 };
