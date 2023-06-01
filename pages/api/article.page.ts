@@ -28,7 +28,12 @@ handler
       console.log(req.body);
       const article = await ArticleCollectionModel.create(req.body);
       console.log('CREATED ARTICLE');
-      res.status(200).json({ article });
+
+      await res.revalidate(`/${req.body.category}`);
+      await res.revalidate(`/${req.body.category}/${article._id}`);
+      console.log('REVALIDATED ARTICLE');
+
+      res.status(200).json({ article, revalidated: true });
     } catch (err) {
       console.log(err);
       if (isValidationError(err)) {
