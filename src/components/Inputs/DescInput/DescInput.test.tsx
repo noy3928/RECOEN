@@ -24,7 +24,6 @@ describe('DescInput', () => {
     return {
       content: '',
       description,
-      imgUrl: '',
       tags: [],
       title: '',
       createdAt: '',

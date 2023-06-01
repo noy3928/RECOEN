@@ -15,7 +15,7 @@ export interface ArticleElement {
   title: string;
   description: string;
   tags: string[];
-  imgUrl: string;
+  imgUrl?: string;
   content: string;
   createdAt?: string;
   category: ArticleCategory;

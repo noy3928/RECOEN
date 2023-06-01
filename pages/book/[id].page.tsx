@@ -52,11 +52,11 @@ export const getStaticPaths = async () => {
 
     return {
       paths,
-      fallback: 'blocking',
+      fallback: false,
     };
   } catch (error) {
     console.log(error);
-    return { paths: [], fallback: 'blocking' };
+    return { paths: [], fallback: false };
   }
 };
 
@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         article,
       },
-      revalidate: 10, // In seconds
+      // revalidate: 10, // In seconds
     };
   } catch (err) {
     console.log(err);

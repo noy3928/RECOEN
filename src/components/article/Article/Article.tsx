@@ -17,17 +17,20 @@ const Article = ({ article, index }: Props) => {
       href={`/${article.category}/${article._id}`}
     >
       <Container>
-        <ImageWrapper>
-          <Image
-            src={article.imgUrl}
-            alt="Thumbnail of article"
-            placeholder="blur"
-            blurDataURL={article.blurDataURL}
-            fill
-            style={{ objectFit: 'cover' }}
-            loading={index < 3 ? 'eager' : 'lazy'}
-          />
-        </ImageWrapper>
+        {article.imgUrl && (
+          <ImageWrapper>
+            <Image
+              src={article.imgUrl}
+              alt="Thumbnail of article"
+              placeholder="blur"
+              blurDataURL={article.blurDataURL}
+              fill
+              style={{ objectFit: 'cover' }}
+              loading={index < 3 ? 'eager' : 'lazy'}
+            />
+          </ImageWrapper>
+        )}
+
         <Wrapper>
           <div>
             <Title aria-label={`제목 : ${article.title}`}>
