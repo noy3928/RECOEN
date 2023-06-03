@@ -18,7 +18,7 @@ const LoginModal = () => {
     <BaseModal handleOpenModal={() => handleOpenModal(null)}>
       <Container>
         <Text>로그인</Text>
-        <GoogleButton onClick={() => signIn('google')}>
+        <GoogleButton onClick={() => signIn('google')} autoFocus>
           <Image
             src={GoogleLogo}
             alt="google-logo"

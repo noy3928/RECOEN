@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from '@emotion/styled';
 import { theme } from 'src/style';
 
@@ -17,12 +17,18 @@ const Button = ({
   onClick,
   autoFocus = false,
 }: Props) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  if (autoFocus) {
+    setTimeout(() => {
+      if (ref.current) ref.current.focus();
+    }, 0);
+  }
   return (
     <StyledButton
       primary={primary}
       onClick={onClick}
       disabled={disabled}
-      autoFocus
+      ref={ref}
     >
       {label}
     </StyledButton>

@@ -27,7 +27,7 @@ const UnAuthModal = () => {
     <BaseModal handleOpenModal={() => null}>
       <Container>
         <Text>해당 페이지를 이용할 수 있는 권한이 없습니다.</Text>
-        <GoogleButton onClick={() => signIn('google')}>
+        <GoogleButton onClick={() => signIn('google')} autoFocus>
           <Image
             src={GoogleLogo}
             alt="google-logo"

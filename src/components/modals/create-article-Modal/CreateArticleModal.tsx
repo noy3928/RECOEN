@@ -27,7 +27,11 @@ const CreateArticleModal = () => {
         <Wrapper data-testid="createArticleModal">
           <H2>글 설정</H2>
           <ButtonWrapper>
-            <Button label="취소" onClick={() => handleOpenModal(null)} />
+            <Button
+              label="취소"
+              onClick={() => handleOpenModal(null)}
+              autoFocus
+            />
             <Button
               label="저장"
               primary
