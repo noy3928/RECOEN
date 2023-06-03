@@ -7,11 +7,23 @@ export interface Props {
   primary?: boolean;
   disabled?: boolean;
   onClick?: () => void;
+  autoFocus?: boolean;
 }
 
-const Button = ({ label, primary, disabled = false, onClick }: Props) => {
+const Button = ({
+  label,
+  primary,
+  disabled = false,
+  onClick,
+  autoFocus = false,
+}: Props) => {
   return (
-    <StyledButton primary={primary} onClick={onClick} disabled={disabled}>
+    <StyledButton
+      primary={primary}
+      onClick={onClick}
+      disabled={disabled}
+      autoFocus
+    >
       {label}
     </StyledButton>
   );
