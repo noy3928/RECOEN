@@ -159,6 +159,20 @@ og 태그와 Head컴포넌트를 메인페이지와 동적페이지들에 적용
 
 div나 span 태그 사용하기를 지양하고, 시맨틱한 태그를 사용하기 위해 고민했습니다. `article`, `time`, `section`, `blockquote`, `cite`, `nav`와 같은 태그들을 적절히 활용하였습니다. `h1` 태그 같은 경우에는 한 페이지당 하나만 존재하도록 작성하였으며, heading 요소들이 순서를 갖추어 화면을 구성할 수 있도록 작성했습니다. 또한 필요한 곳에서 button이나 a 태그를 활용함으로써, 모든 페이지에서 tabIndex도 순서에 알맞게 움직일 수 있게 하였습니다.
 
+#### 언어 설정
+
+기본적으로 전체 페이지의 언어 설정을 ko로 해두고, 영어를 사용하는 곳이 명확한 곳에서 lang="en" 프로퍼티를 사용하였습니다. 이를 통해 AT 기기가 정확하게 언어를 인지할 수 있게 만들었습니다.
+
+```javascript
+  <Title lang="en">recoen.</Title>
+  ...
+  <StyledLink href={path} title={title} passHref legacyBehavior>
+    <Item ref={ref} barWidth={barWidth} isActive={isActive} lang="en">
+      {name}
+    </Item>
+  </StyledLink>
+```
+
 #### aria-label
 
 대부분의 요소들을 시맨틱하게 작성한 결과, aria-label을 넣지 않아도 screen reader가 정상적으로 모든 요소들을 읽을 수 있게 되었습니다. 하지만, 직접 눈을 감고 screen reader를 통해서 모든 요소들을 확인해 본 결과, 몇몇 요소들의 경우 문맥상 시맨틱 태그으로만은 이해하기 어렵겠다고 판단된 요소들이 있었습니다.
@@ -186,18 +200,27 @@ div나 span 태그 사용하기를 지양하고, 시맨틱한 태그를 사용�
 
 이렇게 기본적으로 시맨틱하게 작성함으로써 최대한 aria- 요소를 사용하는 것을 피했으며, 직접 screen reader를 통해 확인함으로써 문맥상 꼭 필요하거난 도움이 되겠다고 판단되는 내용들에 한해서만 aria- 요소를 사용했습니다. 그 결과 screen reader 만으로도 안정적으로 어플리케이션을 이용할 수 있게 되었습니다.
 
-#### 언어 설정
+#### 예측 가능한 tab 순서
 
-기본적으로 전체 페이지의 언어 설정을 ko로 해두고, 영어를 사용하는 곳이 명확한 곳에서 lang="en" 프로퍼티를 사용하였습니다. 이를 통해 AT 기기가 정확하게 언어를 인지할 수 있게 만들었습니다.
+마우스를 이용하지 않고, tab 키보드를 이용하는 유저들도 원활하게 이용할 수 있도록 신경썼습니다. 기본적으로 tab의 순서가 예측 가능하도록 마크업을 배치했습니다. 모달의 경우엔 autoFocus를 활용해 올바른 위치에 tab이 갈 수 있도록 하였습니다.
 
-```javascript
-  <Title lang="en">recoen.</Title>
-  ...
-  <StyledLink href={path} title={title} passHref legacyBehavior>
-    <Item ref={ref} barWidth={barWidth} isActive={isActive} lang="en">
-      {name}
-    </Item>
-  </StyledLink>
+```js
+const ref = useRef < HTMLButtonElement > null;
+if (autoFocus) {
+  setTimeout(() => {
+    if (ref.current) ref.current.focus();
+  }, 0);
+}
+return (
+  <StyledButton
+    primary={primary}
+    onClick={onClick}
+    disabled={disabled}
+    ref={ref}
+  >
+    {label}
+  </StyledButton>
+);
 ```
 
 #### rem
