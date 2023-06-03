@@ -3,6 +3,7 @@ import nc from 'next-connect';
 import ArticleCollectionModel from './models/articleCollectionModel';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withSentry } from '@sentry/nextjs';
+import { getSession } from 'next-auth/react';
 
 const handler = nc<NextApiRequest, NextApiResponse>({
   onError(error, req, res) {
@@ -20,6 +21,15 @@ function isValidationError(err: any): err is Error {
 handler
   .use(async (req, _, next) => {
     await connectMongo();
+    await next();
+  })
+  .use(async (req, res, next) => {
+    const session = await getSession({ req });
+    console.log(session, req);
+    if (!session) {
+      res.status(401).json({ result: false, message: 'Unauthorized' });
+      return;
+    }
     await next();
   })
   .post(async (req, res) => {
