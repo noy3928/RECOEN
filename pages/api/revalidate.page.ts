@@ -12,7 +12,7 @@ const handler = nc<NextApiRequest, NextApiResponse>({
 });
 
 handler.post(async (req, res) => {
-  const article = req.body;
+  const { type, ...article } = req.body;
 
   if (req.query.secret !== process.env.NEXTAUTH_SECRET) {
     console.log('revalidate시 토큰이 다릅니다.');
@@ -21,8 +21,11 @@ handler.post(async (req, res) => {
 
   try {
     await res.revalidate(`/${article.category}`);
-    await res.revalidate(`/${article.category}/${article._id}`);
-    console.log('REVALIDATED ARTICLE');
+
+    if (type !== 'delete') {
+      await res.revalidate(`/${article.category}/${article._id}`);
+      console.log('REVALIDATED ARTICLE');
+    }
 
     return res.json({ revalidated: true });
   } catch (err) {

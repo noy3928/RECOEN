@@ -15,9 +15,12 @@ export const deleteArticle = async (id: string, category: ArticleCategory) => {
   return await axiosInstance.delete(API_URI.ARTICLE_URI, config);
 };
 
-export const revalidateArticle = async (data: ArticleElement) => {
+export const revalidateArticle = async (
+  data: ArticleElement,
+  type?: 'delete',
+) => {
   return await axiosInstance.post(
     `${API_URI.REVALIDATE_URI}${process.env.NEXT_PUBLIC_NEXTAUTH_SECRET}`,
-    data,
+    { ...data, type },
   );
 };
