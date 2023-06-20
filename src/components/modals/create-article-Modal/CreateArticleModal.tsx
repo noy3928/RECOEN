@@ -30,7 +30,7 @@ const CreateArticleModal = () => {
             <Button
               label="취소"
               onClick={() => handleOpenModal(null)}
-              autoFocus
+              // autoFocus
             />
             <Button
               label="저장"

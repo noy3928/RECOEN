@@ -7,16 +7,20 @@ import { useHandleSuccess } from './useHandleSuccess';
 
 export const useResolveSaveArticleHandler = () => {
   const articleElements = useRecoilValue(articleState);
-  const handleSuccess = useHandleSuccess(articleElements.category);
+  const handleSuccess = useHandleSuccess();
   const writeState = useRecoilValue(writeStatus);
 
   const makeSaveArticleHandler =
-    (articleElements: ArticleElement, handleSuccess: () => void) =>
+    (
+      articleElements: ArticleElement,
+      handleSuccess: (article: ArticleElement) => void,
+    ) =>
     async (saveArticleFunction: SaveArticleFunction) => {
       const res = await saveArticleFunction(articleElements);
-      console.log(res);
 
-      if (res.status == 200) handleSuccess();
+      if (res.status == 200) {
+        handleSuccess(res.data.article);
+      }
     };
 
   const handleSaveArticle = makeSaveArticleHandler(
