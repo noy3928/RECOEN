@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import Link from 'next/link';
 
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 import { useSetBarWidth } from 'src/hooks';
 
 export interface Props {

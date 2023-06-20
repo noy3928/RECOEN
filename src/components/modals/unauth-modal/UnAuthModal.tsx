@@ -10,7 +10,7 @@ import GithubLogo from '../../../../public/github-logo.png';
 import BaseModal from '../base-modal/BaseModal';
 import Button from 'src/components/ui/Button/Button';
 
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 import { useHandleOpenModal } from 'src/hooks/useHandleOpenModal';
 

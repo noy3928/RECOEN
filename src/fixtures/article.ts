@@ -1,4 +1,4 @@
-import { ArticleElement, ViewArticleElement } from 'src/types/article';
+import { ArticleElement, ViewArticleElement } from 'src/shared/types/article';
 
 export const article: ArticleElement = {
   title: '리액트 fiber에 대해서 알아보자',

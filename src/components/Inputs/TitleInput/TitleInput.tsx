@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 
-import { UseArticleElement } from 'src/types/article';
+import { UseArticleElement } from 'src/shared/types/article';
 
 interface Props {
   useArticleElement: UseArticleElement;

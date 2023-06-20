@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { articleState } from 'src/recoil/article';
 import { modalState } from 'src/recoil/modal';
 
-import { ArticleElement } from 'src/types/article';
+import { ArticleElement } from 'src/shared/types/article';
 import { revalidateArticle } from 'src/apis';
 
 export const useHandleSuccess = () => {

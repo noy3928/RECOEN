@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { SessionProvider } from 'next-auth/react';
 
 import { Global } from '@emotion/react';
-import { globalStyles } from 'src/style';
+import { globalStyles } from 'src/shared/style';
 import styled from '@emotion/styled';
 
 import { RecoilRoot } from 'recoil';

@@ -1,6 +1,6 @@
 import { atom, selector } from 'recoil';
 import { isAnyPropertyEmpty } from 'src/utils/isAnyPropertyEmpty';
-import { ArticleElement, ViewArticleElement } from 'src/types/article';
+import { ArticleElement, ViewArticleElement } from 'src/shared/types/article';
 
 export const articleState = atom<ArticleElement>({
   key: 'articleState',

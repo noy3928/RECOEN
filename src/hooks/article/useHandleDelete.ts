@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { useRouter } from 'next/router';
 
 import { detailPageState } from 'src/recoil/article';
-import { ArticleCategory } from 'src/types/article';
+import { ArticleCategory } from 'src/shared/types/article';
 import { deleteArticle, revalidateArticle } from 'src/apis';
 
 export const useHandleDelete = (category: ArticleCategory) => {

@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
-import { ArticleModel } from 'src/types/article';
+import { ArticleModel } from 'src/shared/types/article';
 
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { getPlaiceholder } from 'plaiceholder';
 
 import { connectMongo } from 'pages/api/middlewares/connectMongo';

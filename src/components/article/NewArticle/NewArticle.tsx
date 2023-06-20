@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { convertDateFormat } from 'src/utils';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 import Image from 'next/image';
 
 interface Props {

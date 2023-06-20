@@ -1,4 +1,4 @@
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { useSetDetailPageState } from './useSetDetailPageState';
 import { useResetDetailPageState } from './useResetDetailPageState';
 

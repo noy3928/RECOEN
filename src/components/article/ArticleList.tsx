@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { useRecoilValue } from 'recoil';
 import { filteredArticleStates } from 'src/recoil/article';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 
 interface Props {
   articles: ViewArticleElement[];

@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 
 export const globalStyles = css`
   html {

@@ -1,5 +1,5 @@
 import { axiosInstance } from './index';
-import { ArticleElement, ArticleCategory } from 'src/types/article';
+import { ArticleElement, ArticleCategory } from 'src/shared/types/article';
 import { API_URI } from '../shared/constants';
 
 export const createArticle = async (data: ArticleElement) => {

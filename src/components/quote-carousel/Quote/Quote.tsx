@@ -2,7 +2,7 @@ import React from 'react';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { QuoteT } from '../QuoteCarousel/QuoteCarousel';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 
 interface QuoteProps {
   quote: QuoteT;

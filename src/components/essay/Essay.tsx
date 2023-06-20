@@ -2,10 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from 'next/image';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 import Time from './Time';
 
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 
 interface Props {
   article: ViewArticleElement;

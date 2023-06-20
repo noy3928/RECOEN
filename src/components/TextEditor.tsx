@@ -4,7 +4,7 @@ import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
 import { Editor } from '@toast-ui/react-editor';
 import { useS3Upload } from 'next-s3-upload';
 
-import { UseArticleElement } from 'src/types/article';
+import { UseArticleElement } from 'src/shared/types/article';
 
 interface Props {
   useArticleElement: UseArticleElement;

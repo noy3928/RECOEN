@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import { UseArticleElement, ArticleCategory } from 'src/types/article';
+import { UseArticleElement, ArticleCategory } from 'src/shared/types/article';
 
 interface Props {
   useArticleElement: UseArticleElement;

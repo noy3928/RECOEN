@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeTitleFragment } from 'src/utils/makeTitleFragment';
 import styled from '@emotion/styled';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 export const MDXFirstHead: React.FC<any> = (props) => {
   const fragment = makeTitleFragment(props.children);

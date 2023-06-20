@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { articleState, writeStatus } from 'src/recoil/article';
 
-import { SaveArticleFunction, ArticleElement } from 'src/types/article';
+import { SaveArticleFunction, ArticleElement } from 'src/shared/types/article';
 import { createArticle, updateArticle } from 'src/apis';
 import { useHandleSuccess } from './useHandleSuccess';
 
