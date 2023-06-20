@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from '@emotion/styled';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 export interface Props {
   label: string;

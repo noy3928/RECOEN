@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism';

@@ -4,7 +4,7 @@ import { articleState } from 'src/recoil/article';
 import {
   UseArticleElement,
   HandleArticleElementFunction,
-} from 'src/types/article';
+} from 'src/shared/types/article';
 
 export const useArticleElement: UseArticleElement = () => {
   const [articleElements, setElement] = useRecoilState(articleState);

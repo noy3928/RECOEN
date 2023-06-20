@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { useSetRecoilState, useResetRecoilState } from 'recoil';
 import { articleState, writeStatus } from 'src/recoil/article';
 import { useRouter } from 'next/router';

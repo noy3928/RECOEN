@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { useSetRecoilState } from 'recoil';
 import { detailPageState } from 'src/recoil/article';
 

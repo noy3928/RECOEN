@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { UseArticleElement } from 'src/types/article';
+import { UseArticleElement } from 'src/shared/types/article';
 
 interface Props {
   useArticleElement: UseArticleElement;

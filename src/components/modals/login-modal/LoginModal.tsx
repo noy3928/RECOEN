@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseModal from '../base-modal/BaseModal';
 import styled from '@emotion/styled';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 import Image from 'next/image';
 import Button from 'src/components/ui/Button/Button';

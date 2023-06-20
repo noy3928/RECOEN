@@ -1,5 +1,5 @@
 import { DiscussionEmbed } from 'disqus-react';
-import { ArticleElement } from 'src/types/article';
+import { ArticleElement } from 'src/shared/types/article';
 
 interface Props {
   article: ArticleElement;

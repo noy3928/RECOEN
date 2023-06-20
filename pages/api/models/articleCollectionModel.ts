@@ -1,5 +1,5 @@
 import { Schema, model, models } from 'mongoose';
-import { ArticleModel as ArticleModelT } from 'src/types/article';
+import { ArticleModel as ArticleModelT } from 'src/shared/types/article';
 
 const articleSchema = new Schema<ArticleModelT>(
   {

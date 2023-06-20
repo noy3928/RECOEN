@@ -4,18 +4,23 @@ import { useRouter } from 'next/router';
 import { articleState } from 'src/recoil/article';
 import { modalState } from 'src/recoil/modal';
 
-import { ArticleCategory } from 'src/types/article';
+import { ArticleElement } from 'src/shared/types/article';
+import { revalidateArticle } from 'src/apis';
 
-export const useHandleSuccess = (category: ArticleCategory) => {
+export const useHandleSuccess = () => {
   const resetArticle = useResetRecoilState(articleState);
   const resetModalState = useResetRecoilState(modalState);
 
   const router = useRouter();
 
-  return () => {
-    router.push(`/${category}`);
-
-    resetArticle();
-    resetModalState();
+  return async (article: ArticleElement) => {
+    try {
+      await revalidateArticle(article);
+      router.push(`/${article.category}`);
+      resetArticle();
+      resetModalState();
+    } catch (err) {
+      console.log(err);
+    }
   };
 };

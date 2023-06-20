@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 import Link from 'next/link';
 

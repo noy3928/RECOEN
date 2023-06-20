@@ -1,5 +1,5 @@
 import { axiosInstance } from './index';
-import { Comment } from 'src/types/comment';
+import { Comment } from 'src/shared/types/comment';
 
 export function createComment({ postId, userId, content }: Comment) {
   return axiosInstance.post('/api/comment', {

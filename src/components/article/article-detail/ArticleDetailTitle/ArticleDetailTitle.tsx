@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import Button from 'src/components/ui/Button/Button';
 import Chip from 'src/components/ui/Chip/Chip';
 
-import { ArticleElement } from 'src/types/article';
+import { ArticleElement } from 'src/shared/types/article';
 
 import { useHandleDelete } from 'src/hooks';
 import { convertDateFormat } from 'src/utils';

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 import { convertDateFormat } from 'src/utils';
 
 interface Props {

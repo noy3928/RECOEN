@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import styled from '@emotion/styled';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 import Image from 'next/image';
 import profileImage from '../../public/profile.png';
 import { FaGithub } from 'react-icons/fa';

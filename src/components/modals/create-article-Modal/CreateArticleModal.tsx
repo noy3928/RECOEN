@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { theme } from 'src/style';
+import { theme } from 'src/shared/style';
 
 import BaseModal from '../base-modal/BaseModal';
 import ImageUpload from 'src/components/Image-upload/ImageUpload';
@@ -30,7 +30,7 @@ const CreateArticleModal = () => {
             <Button
               label="취소"
               onClick={() => handleOpenModal(null)}
-              autoFocus
+              // autoFocus
             />
             <Button
               label="저장"

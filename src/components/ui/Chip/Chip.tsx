@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import XImage from '../../../../public/x.png';
-import { theme } from 'src/style/theme';
+import { theme } from 'src/shared/style/theme';
 
 export interface Props {
   label: string;

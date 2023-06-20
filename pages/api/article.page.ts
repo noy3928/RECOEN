@@ -25,7 +25,6 @@ handler
   })
   .use(async (req, res, next) => {
     const session = await getSession({ req });
-    console.log(session, req);
     if (!session) {
       res.status(401).json({ result: false, message: 'Unauthorized' });
       return;
@@ -35,15 +34,10 @@ handler
   .post(async (req, res) => {
     try {
       console.log('CREATING ARTICLE');
-      console.log(req.body);
       const article = await ArticleCollectionModel.create(req.body);
       console.log('CREATED ARTICLE');
 
-      await res.revalidate(`/${req.body.category}`);
-      await res.revalidate(`/${req.body.category}/${article._id}`);
-      console.log('REVALIDATED ARTICLE');
-
-      res.status(200).json({ article, revalidated: true });
+      res.status(200).json({ article });
     } catch (err) {
       console.log(err);
       if (isValidationError(err)) {
@@ -74,11 +68,7 @@ handler
       );
       console.log('UPDATED ARTICLE');
 
-      await res.revalidate(`/${req.body.category}`);
-      await res.revalidate(`/${req.body.category}/${article._id}`);
-      console.log('REVALIDATED ARTICLE');
-
-      res.status(200).json({ article, revalidated: true });
+      res.status(200).json({ article });
     } catch (err) {
       console.log(err);
     }
@@ -91,9 +81,6 @@ handler
 
       if (!article) return res.status(404);
       console.log('DELETED ARTICLE');
-
-      await res.revalidate(`/${req.body.category}`);
-      console.log('REVALIDATED ARTICLE');
 
       res.status(200).json({ article, revalidated: true });
     } catch (err) {

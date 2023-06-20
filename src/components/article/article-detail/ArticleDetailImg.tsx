@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import { ViewArticleElement } from 'src/types/article';
+import { ViewArticleElement } from 'src/shared/types/article';
 
 interface Props {
   article: ViewArticleElement;
