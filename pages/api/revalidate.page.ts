@@ -14,7 +14,7 @@ const handler = nc<NextApiRequest, NextApiResponse>({
 handler.post(async (req, res) => {
   const { type, ...article } = req.body;
 
-  if (req.query.secret !== process.env.NEXTAUTH_SECRET) {
+  if (req.query.secret !== process.env.NEXT_PUBLIC_NEXTAUTH_SECRET) {
     console.log('revalidate시 토큰이 다릅니다.');
     return res.status(401).json({ message: 'Invalid token' });
   }
