@@ -21,6 +21,6 @@ export const revalidateArticle = async (
 ) => {
   return await axiosInstance.post(
     `${API_URI.REVALIDATE_URI}${process.env.NEXT_PUBLIC_NEXTAUTH_SECRET}`,
-    { ...data, type },
+    { ...data, type: type || null },
   );
 };
