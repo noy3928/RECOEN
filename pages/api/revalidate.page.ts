@@ -13,6 +13,7 @@ const handler = nc<NextApiRequest, NextApiResponse>({
 
 handler.post(async (req, res) => {
   const { type, category, _id } = req.body;
+  console.log('start revalidate');
 
   if (req.query.secret !== process.env.NEXT_PUBLIC_NEXTAUTH_SECRET) {
     console.log('revalidate시 토큰이 다릅니다.');
