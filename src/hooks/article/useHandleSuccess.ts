@@ -15,6 +15,7 @@ export const useHandleSuccess = () => {
 
   return async (article: ArticleElement) => {
     try {
+      console.log('success action start');
       await revalidateArticle(article);
       router.push(`/${article.category}`);
       resetArticle();

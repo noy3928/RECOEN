@@ -19,6 +19,7 @@ export const useResolveSaveArticleHandler = () => {
       const res = await saveArticleFunction(articleElements);
 
       if (res.status == 200) {
+        console.log('creating article success');
         handleSuccess(res.data.article);
       }
     };
